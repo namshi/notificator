@@ -25,7 +25,7 @@ the documentation below!
 Installation can be done via composer, as the
 library is already on [packagist](https://packagist.org/packages/namshi/notificator).
 
-The library uses semantic versioning for their API,
+The library uses semantic versioning for its API,
 so it is recommended to use a stable minor version
 (1.0, 1.1, etc.) and stick to it when declaring dependencies
 through composer:
@@ -36,8 +36,8 @@ through composer:
 
 ## Usage
 
-Using this library is very easy thanks to the simple concept
-- borrowed from others - behind it: you basically have a
+Using this library is very easy thanks to the simple
+concept - borrowed from others - behind it: you basically have a
 notification manager with some handlers and then you fire
 (`trigger()`) the notification with the manager. At that point,
 all the handlers that need to fire that notification will take
