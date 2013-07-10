@@ -42,7 +42,7 @@ notification manager with some handlers and then you fire
 (`trigger()`) the notification with the manager. At that point,
 all the handlers that need to fire that notification will take
 care of firing it in their context (might be an email, a skype message, etc)
-and tell the manager that they're done, so that the mmanager
+and tell the manager that they're done, so that the manager
 can forward the notification to the next handler.
 
 ``` php
@@ -225,6 +225,22 @@ class EmailNotificationHandler implements HandlerInterface
     }
 }
 ```
+
+If you want to stop notification propagation after an handler has triggered
+the notification, you just need to return `false` in the handler method:
+
+``` php
+public function handle(NotificationInterface $notification)
+{
+    // do whatever you want with the notification
+    // ...
+
+    return false;
+}
+```
+
+This will tell the manager to stop propagating the notification to other
+handlers.
 
 ## Inside Symfony2
 
