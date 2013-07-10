@@ -237,11 +237,11 @@ This is an example configuration that can be declared for the container:
 namshi.notification.manager:
     class: Namshi\Notificator\Manager
     calls:
-      - [addhandler, [@namshi_karl.notification.handler.email] ]
+      - [addhandler, [@namshi.notification.handler.email] ]
 namshi.notification.handler.email:
     class: Namshi\Notificator\Notification\Handler\Email\Emailvision
     arguments:
-      client: @namshi_karl.email_client.emailvision      
+      client: @namshi.email_client.emailvision      
 namshi.email_client.emailvision:
     class: Namshi\Emailvision\Client
     arguments:
@@ -254,6 +254,51 @@ namshi.email_client.emailvision:
 ```
 
 This configuration makes available a Manager with the Emailvision handler.
+
+## RabbitMQ
+
+If you use Symfony2 and the [RabbitMQBundle](https://github.com/videlalvaro/rabbitmqbundle)
+you can trigger notifications with this library via RabbitMQ, by using the
+[provided consumer](https://github.com/namshi/notificator/blob/master/src/Namshi/Notificator/Messaging/RabbitMQ/Symfony2/Consumer.php).
+
+Declare the consumer as a service:
+
+```
+namshi.notification.consumer:
+    class: Namshi\Notificator\Messaging\RabbitMQ\Symfony2\Consumer
+    arguments: [@namshi.notification.manager]
+```
+
+Then configure it within the RabbitMQ bundle:
+
+```
+old_sound_rabbit_mq:
+    consumers:
+        notification:
+            connection: default
+            exchange_options: {name: 'notifications', type: direct}
+            queue_options:    {name: 'notifications'}
+            callback:         namshi.notification.consumer
+```
+
+And at that point you can run the consumer with:
+
+```
+php app/console rabbitmq:consumer -w notification
+```
+
+To send notifications, the idea is that you serialize them inside the
+RabbitMQ messages:
+
+``` php
+$publisher = $container->get('old_sound_rabbit_mq.notifications_producer');
+
+$notification = new MyWhateverNotification("man, this comes from RabbitMQ and Symfony2!");
+
+$publisher->publish(serialize($notification));
+```
+
+That's it!
 
 ## Built-in handlers
 
