@@ -100,7 +100,78 @@ $manager->setHandlers(array());
 
 ## Creating a new notification
 
-todo
+Creating new notifications is very easy, as they
+are plain PHP classes.
+
+They *might* extend the base Notification class but
+that is not mandatory.
+It is recommended, to be able to fire one notification
+through multiple handlers, to extends the base Notification
+class, and implement different interfaces that will be later
+checked by the handlers.
+
+``` php
+<?php
+
+use Namshi\Notificator\Notification;
+use Namshi\Notificator\NotificationInterface;
+
+interface EchoedNotificationInterface extends NotificationInterface
+{
+    public function getMessage();
+}
+
+interface EmailNotificationInterface extends NotificationInterface
+{
+    public function getAddress();
+    public function getSubject();
+    public function getBody();
+}
+
+class DoubleNotification extends Notification implements EchoedNotificationInterface, EmailNotificationInterface
+{
+    protected $address;
+    protected $body;
+    protected $subject;
+
+    public function __construct($address, $subject, $body, array $parameters = array())
+    {
+        parent::__construct($parameters);
+
+        $this->address  = $address;
+        $this->body     = $body;
+        $this->subject  = $subject;
+        $this->message  = $body;
+    }
+
+    public function getAddress()
+    {
+        return $this->address;
+    }
+
+    public function getSubject()
+    {
+        return $this->subject;
+    }
+
+    public function getBody()
+    {
+        return $this->body;
+    }
+
+    public function getMessage()
+    {
+        return $this->message;
+    }
+}
+```
+
+As you probably got, the above notification class is meant
+to be triggered via email **and** with the `echo` function
+(pretty useless, but gives you an idea).
+
+But the work wouldn't be over here, as you would need to
+implement handlers for this notification...
 
 ## Creating a new handler
 
