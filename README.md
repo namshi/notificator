@@ -227,7 +227,8 @@ class EmailNotificationHandler implements HandlerInterface
 ```
 
 If you want to stop notification propagation after an handler has triggered
-the notification, you just need to return `false` in the handler method:
+the notification, you just need to return `false` in the `handle` method of the
+handler:
 
 ``` php
 public function handle(NotificationInterface $notification)
