@@ -23,7 +23,7 @@ the documentation below!
 ## Installation
 
 Installation can be done via composer, as the
-library is already on packagist (todo link).
+library is already on [packagist](https://packagist.org/packages/namshi/notificator).
 
 The library uses semantic versioning for their API,
 so it is recommended to use a stable minor version
