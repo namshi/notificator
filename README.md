@@ -175,7 +175,56 @@ implement handlers for this notification...
 
 ## Creating a new handler
 
-todo
+Let's say that we want to create the handlers that would
+handle the notification above, by echoing it and sending it
+via email: it is a matter of implementing 2 classes with
+a couple methods, `shouldHandle` and `handle`.
+
+Let's see how the `EchoedNotificationHandler` should look like:
+
+``` php
+use Namshi\Notificator\Notification\Handler\HandlerInterface;
+use Namshi\Notificator\NotificationInterface;
+
+class EchoedNotificationHandler implements HandlerInterface
+{
+    public function shouldHandle(NotificationInterface $notification)
+    {
+        return $notification instanceOf EchoedNotificationInterface;
+    }
+
+    public function handle(NotificationInterface $notification)
+    {
+        echo $notification->getMessage();
+    }
+}
+```
+
+Pretty easy, right?
+
+First, we need to check if this handler is handling the given notification,
+and that check is done by seeing if the notification implements
+a known interface; second, we actually trigger the notification.
+
+The same thing needs to be done for the `EmailHandler`:
+
+``` php
+use Namshi\Notificator\Notification\Handler\HandlerInterface;
+use Namshi\Notificator\NotificationInterface;
+
+class EchoedNotificationHandler implements HandlerInterface
+{
+    public function shouldHandle(NotificationInterface $notification)
+    {
+        return $notification instanceOf EmailNotificationInterface;
+    }
+
+    public function handle(NotificationInterface $notification)
+    {
+        mail($notification->getAddress(), $notification->getSubject(), $notification->getBody());
+    }
+}
+```
 
 ## Inside Symfony2
 
