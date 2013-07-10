@@ -228,7 +228,32 @@ class EmailNotificationHandler implements HandlerInterface
 
 ## Inside Symfony2
 
-todo
+[Namshi](http://en-ae.namshi.com) is currently using this library inside
+their Symfony2 applications.
+
+This is an example configuration that can be declared for the container:
+
+```
+namshi.notification.manager:
+    class: Namshi\Notificator\Manager
+    calls:
+      - [addhandler, [@namshi_karl.notification.handler.email] ]
+namshi.notification.handler.email:
+    class: Namshi\Notificator\Notification\Handler\Email\Emailvision
+    arguments:
+      client: @namshi_karl.email_client.emailvision      
+namshi.email_client.emailvision:
+    class: Namshi\Emailvision\Client
+    arguments:
+      config:
+        test_email:
+          random:   AAA
+          encrypt:  BBB
+          uidkey:   email
+          stype:    NOTHING
+```
+
+This configuration makes available a Manager with the Emailvision handler.
 
 ## Built-in handlers
 
