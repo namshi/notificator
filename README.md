@@ -186,3 +186,10 @@ todo
 todo
 
 ## Examples
+
+You can have a look at the few examples provided so far,
+under the `examples` directory:
+
+* [creating a custom handler that sends an email](https://github.com/namshi/notificator/blob/master/examples/email-custom-handler.php)
+* [using the notify-send handler](https://github.com/namshi/notificator/blob/master/examples/notify-send.php)
+* [triggering a notification that is not handled by any handler](https://github.com/namshi/notificator/blob/master/examples/unhandled.php)
