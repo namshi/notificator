@@ -206,13 +206,13 @@ First, we need to check if this handler is handling the given notification,
 and that check is done by seeing if the notification implements
 a known interface; second, we actually trigger the notification.
 
-The same thing needs to be done for the `EmailHandler`:
+The same thing needs to be done for the `EmailNotificationHandler`:
 
 ``` php
 use Namshi\Notificator\Notification\Handler\HandlerInterface;
 use Namshi\Notificator\NotificationInterface;
 
-class EchoedNotificationHandler implements HandlerInterface
+class EmailNotificationHandler implements HandlerInterface
 {
     public function shouldHandle(NotificationInterface $notification)
     {
@@ -232,7 +232,19 @@ todo
 
 ## Built-in handlers
 
-todo
+We, at [Namshi](https://github.com/namshi) have developed some very simple,
+built-in, handlers according to our needs. Keep in mind that the main
+reason behind building this kind of library is the ability of triggering
+notification from each component of our SOA, mostly via RabbitMQ.
+
+You can take advantage of the following handlers:
+
+* `Emailvision`, which sends emails through the [Emailvision API](http://www.emailvision.com/)
+* `NotifySend`, which triggers notifications on Ubuntu
+
+If you have an idea for a new handler, don't hesitate with a pull request:
+sure, they can be implemented within your own code, but why not sharing them
+with the OSS ecosystem?
 
 ## Examples
 
