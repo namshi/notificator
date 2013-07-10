@@ -1,0 +1,23 @@
+{
+    "name": "namshi/notificator",
+    "description": "A lightweight library to handle notifications the smart way.",
+    "require-dev": {
+        "phpunit/phpunit": "3.7.*"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "odino",
+            "email": "alessandro.nadalin@gmail.com"
+        }
+    ],
+    "require": {
+
+    },
+    "autoload": {
+        "psr-0": {
+            "Namshi\\Notificator": "src/",
+            "Namshi\\Notificator\\Test": "tests/"
+        }
+    }
+}
