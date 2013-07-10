@@ -11,6 +11,8 @@ use Namshi\Emailvision\Client;
  */
 class Emailvision extends Email
 {
+    protected $emailClient;
+    
     /**
      * Constructor
      * 
@@ -51,5 +53,15 @@ class Emailvision extends Email
     public function setEmailClient(Client $emailClient)
     {
         $this->emailClient = $emailClient;
+    }
+    
+    /**
+     * Returns the email client used by this handler.
+     * 
+     * @return Namshi\Emailvision\Client
+     */
+    public function getEmailClient()
+    {
+        return $this->emailClient;
     }
 }

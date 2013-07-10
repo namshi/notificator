@@ -9,15 +9,11 @@ use Namshi\Notificator\Notification\Email\EmailNotificationInterface;
  * This class handles notifications that should be sent via email.
  */
 abstract class Email implements HandlerInterface
-{
-    protected $emailClient;
-    
+{    
     /**
      * @inheritDoc
      */
-    public function handle(NotificationInterface $notification)
-    {
-    }
+    abstract public function handle(NotificationInterface $notification);
     
     /**
      * @inheritDoc
@@ -25,15 +21,5 @@ abstract class Email implements HandlerInterface
     public function shouldHandle(NotificationInterface $notification)
     {
         return $notification instanceof EmailNotificationInterface;
-    }
-    
-    /**
-     * Returns the email client associated with this handler.
-     * 
-     * @return mixed
-     */
-    public function getEmailClient()
-    {
-        return $this->emailClient;
     }
 }
