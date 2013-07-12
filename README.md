@@ -74,7 +74,7 @@ This code, ran on ubuntu, will fire the notification using the
 ## The notification Manager
 
 The manager is the entity that registers all the
-handlers and fire the notification.
+handlers and fires the notification.
 
 You can set and add handlers very easily:
 
