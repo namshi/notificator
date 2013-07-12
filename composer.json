@@ -12,9 +12,6 @@
             "email": "alessandro.nadalin@gmail.com"
         }
     ],
-    "require": {
-
-    },
     "autoload": {
         "psr-0": {
             "Namshi\\Notificator": "src/",
