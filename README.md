@@ -106,7 +106,7 @@ are plain PHP classes.
 They *might* extend the base Notification class but
 that is not mandatory.
 It is recommended, to be able to fire one notification
-through multiple handlers, to extends the base Notification
+through multiple handlers, to extend the base Notification
 class, and implement different interfaces that will be later
 checked by the handlers.
 
