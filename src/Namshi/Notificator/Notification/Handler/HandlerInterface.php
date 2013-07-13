@@ -13,10 +13,10 @@ interface HandlerInterface
      * Checks whether the handler is supposed to handle the given
      * $notification.
      * 
-     * @param Namshi\Notificator\Notification\NotificationInterface $notification
-     * @return bool
+     * @param NotificationInterface $notification
+     * @return boolean
      */
-    public function shouldHandle(NotificationInterface $notification);
+    function shouldHandle(NotificationInterface $notification);
     
     /**
      * Handles a notification, deciding whether this handler should trigger it,
@@ -24,7 +24,7 @@ interface HandlerInterface
      * 
      * If the handler returns (bool) false, propagation should be stopped.
      * 
-     * @param Namshi\Notificator\Notification\NotificationInterface $notification
+     * @param NotificationInterface $notification
      */
-    public function handle(NotificationInterface $notification);
+    function handle(NotificationInterface $notification);
 }

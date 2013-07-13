@@ -15,5 +15,5 @@ interface EmailvisionNotificationInterface extends EmailNotificationInterface
      * 
      * @return string
      */
-    public function getEmailTemplate();
+    function getEmailTemplate();
 }

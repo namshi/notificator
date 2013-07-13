@@ -28,10 +28,11 @@ class NotifySend implements HandlerInterface
     {
         shell_exec($this->getCommand($notification));
     }
-    
+
     /**
      * Returns the command to be executed via CLI.
-     * 
+     *
+     * @param NotifySendNotificationInterface $notification
      * @return string
      */
     protected function getCommand(NotifySendNotificationInterface $notification)

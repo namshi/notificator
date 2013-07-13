@@ -9,11 +9,12 @@ interface ManagerInterface
 {
     /**
      * Triggers a notification to the various handlers that should process it.
-     * 
+     *
      * If an handler returns (bool) false, the manager should stop propagating
      * the $notification to other handlers.
-     * 
-     * @param Namshi\Notificator\Notification\NotificationInterface $notification
+     *
+     * @param NotificationInterface $notification
+     * @return boolean|void
      */
-    public function trigger(NotificationInterface $notification);
+    function trigger(NotificationInterface $notification);
 }

@@ -16,7 +16,7 @@ interface NotificationInterface
      * 
      * @return array
      */
-    public function getParameters();
+    function getParameters();
     
     /**
      * Sets an array of parameters that are sent along with this
@@ -24,5 +24,5 @@ interface NotificationInterface
      * They are usually used by handlers to build the actual notification (ie. 
      * dynamic content in emails or smses).
      */
-    public function setParameters(array $parameters);
+    function setParameters(array $parameters);
 }

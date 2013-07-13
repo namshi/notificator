@@ -15,10 +15,10 @@ interface EmailNotificationInterface extends NotificationInterface
      * 
      * @return true|null
      */
-    public function getRecipientAddress();
+    function getRecipientAddress();
     
     /**
      * Sets the email address that will receive this notification.
      */
-    public function setRecipientAddress($recipientAddress);
+    function setRecipientAddress($recipientAddress);
 }
