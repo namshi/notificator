@@ -21,7 +21,7 @@ class Consumer implements ConsumerInterface
     /**
      * Constructor
      * 
-     * @param Namshi\Notificator\ManagerInterface $notificationManager
+     * @param ManagerInterface $notificationManager
      */
     public function __construct(ManagerInterface $notificationManager)
     {
@@ -32,7 +32,7 @@ class Consumer implements ConsumerInterface
      * Processes the $message, by first valdating it and then dispatching it to
      * the notification manager.
      * 
-     * @param \PhpAmqpLib\Message\AMQPMessage $message
+     * @param AMQPMessage $message
      * @return bool
      */
     public function execute(AMQPMessage $message)
@@ -47,7 +47,7 @@ class Consumer implements ConsumerInterface
      * the NotificationInterface.
      * 
      * @param string $notification
-     * @return Namshi\Notificator\NotificationInterface
+     * @return NotificationInterface
      * @throws InvalidArgumentException
      */
     protected function validateNotification($notification)
@@ -64,7 +64,7 @@ class Consumer implements ConsumerInterface
     /**
      * Returns the notification manager used by this class.
      * 
-     * @return Namshi\Notificator\ManagerInterface
+     * @return ManagerInterface
      */
     public function getNotificationManager()
     {
@@ -74,7 +74,7 @@ class Consumer implements ConsumerInterface
     /**
      * Sets the notification manager for this class.
      * 
-     * @param Namshi\Notificator\ManagerInterface $notificationManager
+     * @param ManagerInterface $notificationManager
      */
     public function setNotificationManager(ManagerInterface $notificationManager)
     {

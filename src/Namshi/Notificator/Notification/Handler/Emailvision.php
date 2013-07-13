@@ -58,7 +58,7 @@ class Emailvision extends Email
     /**
      * Returns the email client used by this handler.
      * 
-     * @return Namshi\Emailvision\Client
+     * @return \Namshi\Emailvision\Client
      */
     public function getEmailClient()
     {
