@@ -1,5 +1,7 @@
 # NAMSHI | Notificator
 
+[![Build Status](https://travis-ci.org/namshi/notificator.png?branch=master)](https://travis-ci.org/namshi/notificator)
+
 *Notificator* is a very simple and
 lightweight library to handle
 notifications the smart way.
