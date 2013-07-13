@@ -16,5 +16,5 @@ interface ManagerInterface
      * @param NotificationInterface $notification
      * @return boolean|void
      */
-    public function trigger(NotificationInterface $notification);
+    function trigger(NotificationInterface $notification);
 }

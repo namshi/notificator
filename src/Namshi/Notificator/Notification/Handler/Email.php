@@ -9,12 +9,7 @@ use Namshi\Notificator\Notification\Email\EmailNotificationInterface;
  * This class handles notifications that should be sent via email.
  */
 abstract class Email implements HandlerInterface
-{    
-    /**
-     * @inheritDoc
-     */
-    abstract public function handle(NotificationInterface $notification);
-    
+{
     /**
      * @inheritDoc
      */

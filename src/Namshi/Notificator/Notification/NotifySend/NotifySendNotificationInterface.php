@@ -15,5 +15,5 @@ interface NotifySendNotificationInterface extends NotificationInterface
      * 
      * @return string
      */
-    public function getMessage();
+    function getMessage();
 }

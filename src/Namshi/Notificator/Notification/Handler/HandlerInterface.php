@@ -16,7 +16,7 @@ interface HandlerInterface
      * @param NotificationInterface $notification
      * @return boolean
      */
-    public function shouldHandle(NotificationInterface $notification);
+    function shouldHandle(NotificationInterface $notification);
     
     /**
      * Handles a notification, deciding whether this handler should trigger it,
@@ -26,5 +26,5 @@ interface HandlerInterface
      * 
      * @param NotificationInterface $notification
      */
-    public function handle(NotificationInterface $notification);
+    function handle(NotificationInterface $notification);
 }
