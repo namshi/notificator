@@ -258,7 +258,7 @@ namshi.notification.manager:
     calls:
       - [addhandler, [@namshi.notification.handler.email] ]
 namshi.notification.handler.email:
-    class: Namshi\Notificator\Notification\Handler\Email\Emailvision
+    class: Namshi\Notificator\Notification\Handler\Emailvision
     arguments:
       client: @namshi.email_client.emailvision      
 namshi.email_client.emailvision:
