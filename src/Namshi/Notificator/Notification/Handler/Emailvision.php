@@ -20,7 +20,7 @@ class Emailvision extends Email
      */
     public function __construct(Client $emailClient)
     {
-        $this->emailClient = $emailClient;
+        $this->setEmailClient($emailClient);
     }
     
     /**
@@ -28,7 +28,7 @@ class Emailvision extends Email
      */
     public function handle(NotificationInterface $notification)
     {
-        $this->emailClient->sendEmail(
+        $this->getEmailClient()->sendEmail(
             $notification->getEmailTemplate(),
             $notification->getRecipientAddress(),
             $notification->getParameters()

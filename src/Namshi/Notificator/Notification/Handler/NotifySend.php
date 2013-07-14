@@ -52,7 +52,7 @@ class NotifySend implements HandlerInterface
            throw new ProcessFailedException($process);
         }
 
-        echo $process->getOutput();
+        return $process->getOutput();
     }
 
     /**
@@ -74,5 +74,4 @@ class NotifySend implements HandlerInterface
     public function isExecutableAvailable() {
         return null !== $this->executableFinder->find(self::NOTIFY_SEND_COMMAND);
     }
-
 }
