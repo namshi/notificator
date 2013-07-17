@@ -62,7 +62,7 @@ $handler = new NotifySendHandler();
 $manager = new Manager();
 $manager->addHandler($handler);
 
-$notification = new NotifySendNotification("...whhatever message...");
+$notification = new NotifySendNotification("...whatever message...");
 
 //  trigger the notification
 $manager->trigger($notification);
