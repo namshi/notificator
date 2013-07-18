@@ -29,7 +29,7 @@ class Consumer implements ConsumerInterface
     }
     
     /**
-     * Processes the $message, by first valdating it and then dispatching it to
+     * Processes the $message, by first validating it and then dispatching it to
      * the notification manager.
      * 
      * @param AMQPMessage $message
