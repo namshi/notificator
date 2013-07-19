@@ -29,7 +29,7 @@ class NotifySendTest extends PHPUnit_Framework_TestCase
             $this->handler->handle(new NotifySendNotification('my message'));
         } else {
             $this->assertTrue($this->handler->shouldHandle(new NotifySendNotification('my message')));
-            $this->assertNull($this->handler->handle(new NotifySendNotification('my message')));
+            $this->assertEmpty($this->handler->handle(new NotifySendNotification('my message')));
         }
     }
 }
