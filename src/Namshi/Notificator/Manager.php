@@ -14,6 +14,16 @@ class Manager implements ManagerInterface
     protected $handlers = array();
     
     /**
+     * Constructor.
+     * 
+     * @param array $handlers
+     */
+    public function __construct(array $handlers = array())
+    {
+        $this->setHandlers($handlers);
+    }
+    
+    /**
      * @inheritDoc
      */
     public function trigger(NotificationInterface $notification)

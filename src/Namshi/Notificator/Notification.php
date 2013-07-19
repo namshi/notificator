@@ -40,6 +40,19 @@ class Notification implements NotificationInterface
     }
     
     /**
+     * Returns a parameter.
+     * 
+     * @param string $id
+     * @return mixed
+     */
+    public function getParameter($id)
+    {
+        if (isset($this->parameters[$id])) {
+            return $this->parameters[$id];
+        }
+    }
+    
+    /**
      * @inheritDoc
      */
     public function getParameters()

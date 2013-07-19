@@ -328,6 +328,7 @@ notification from each component of our SOA, mostly via RabbitMQ.
 
 You can take advantage of the following handlers:
 
+* `HipChat`, which posts messages in an [HipChat](https://www.hipchat.com) room
 * `Emailvision`, which sends emails through the [Emailvision API](http://www.emailvision.com/)
 * `NotifySend`, which triggers notifications on Ubuntu
 * `RabbitMQ`, which triggers notifications through [RabbitMQ](http://www.rabbitmq.com/)
@@ -341,6 +342,7 @@ with the OSS ecosystem?
 You can have a look at the few examples provided so far,
 under the `examples` directory:
 
+* [sending messages on HipChat](https://github.com/namshi/notificator/blob/master/examples/hipchat.php)
 * [creating a custom handler that sends an email](https://github.com/namshi/notificator/blob/master/examples/email-custom-handler.php)
 * [using the notify-send handler](https://github.com/namshi/notificator/blob/master/examples/notify-send.php)
 * [triggering a notification that is not handled by any handler](https://github.com/namshi/notificator/blob/master/examples/unhandled.php)
