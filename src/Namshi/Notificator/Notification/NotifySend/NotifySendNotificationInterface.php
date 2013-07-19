@@ -10,10 +10,4 @@ use Namshi\Notificator\NotificationInterface;
  */
 interface NotifySendNotificationInterface extends NotificationInterface
 {
-    /**
-     * Returns the message that will be outputted via notify-send.
-     * 
-     * @return string
-     */
-    function getMessage();
 }
