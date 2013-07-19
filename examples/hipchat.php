@@ -3,9 +3,7 @@
 require __DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "vendor" . DIRECTORY_SEPARATOR . "autoload.php";
 
 // import namespaces
-use Namshi\Notificator\Notification\Handler\Email as EmailHandler;
 use Namshi\Notificator\Manager;
-use Namshi\Notificator\Notification;
 use Namshi\Notificator\Notification\Handler\HipChat as HipChatHandler;
 use HipChat\HipChat;
 use Namshi\Notificator\Notification\HipChat\HipChatNotification;
