@@ -89,4 +89,9 @@ class StubNotification implements NotificationInterface
     {
         
     }
+    
+    public function getMessage()
+    {
+        return 111;
+    }
 }

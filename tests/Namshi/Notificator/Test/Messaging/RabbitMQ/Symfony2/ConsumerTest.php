@@ -14,7 +14,7 @@ class ConsumerTest extends PHPUnit_Framework_TestCase
     {
         $notificationManager    = new StubManager();
         $consumer               = new Consumer($notificationManager);
-        $message                = new StubNotification();
+        $message                = new \Namshi\Notificator\Notification('hello');
         $amqpMessage            = new AMQPMessage(serialize($message));
         $result                 = $consumer->execute($amqpMessage);
         
@@ -32,19 +32,6 @@ class ConsumerTest extends PHPUnit_Framework_TestCase
         $result         = $consumer->execute($amqpMessage);
         
         $this->assertTrue($result);
-    }
-}
-
-class StubNotification implements NotificationInterface
-{
-    public function getParameters()
-    {
-        
-    }
-    
-    public function setParameters(array $parameters)
-    {
-        
     }
 }
 

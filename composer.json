@@ -8,8 +8,9 @@
     },
     "suggest": {
         "phpunit/phpunit": "To easily run tests locally",
-        "oldsound/rabbitmq-bundle": "To trigger notifications through RabbitMQ",
-        "symfony/process": "To trigger notify-send notifications under Ubuntu"
+        "oldsound/rabbitmq-bundle": "To send RabbitMQ notifications in Symfony2",
+        "symfony/process": "To trigger notify-send notifications under Ubuntu",
+        "videlalvaro/php-amqplib": "To send notifications through RabbitMQ"
     },            
     "license": "MIT",
     "authors": [

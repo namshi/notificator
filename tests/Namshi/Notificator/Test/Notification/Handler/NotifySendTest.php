@@ -17,7 +17,7 @@ class NotifySendTest extends PHPUnit_Framework_TestCase
     
     public function testTheHandlerDoesntHandleAnyNotificationByDefault()
     {
-        $this->assertFalse($this->handler->shouldHandle(new StubNotification3()));
+        $this->assertFalse($this->handler->shouldHandle(new \Namshi\Notificator\Notification('hello')));
     }
     
     public function testTheHandlerHandlesANotification()
@@ -31,18 +31,5 @@ class NotifySendTest extends PHPUnit_Framework_TestCase
             $this->assertTrue($this->handler->shouldHandle(new NotifySendNotification('my message')));
             $this->assertEmpty($this->handler->handle(new NotifySendNotification('my message')));
         }
-    }
-}
-
-class StubNotification3 implements \Namshi\Notificator\NotificationInterface
-{   
-    public function getParameters()
-    {
-        return array();
-    }
-    
-    public function setParameters(array $parameters)
-    {
-        
     }
 }

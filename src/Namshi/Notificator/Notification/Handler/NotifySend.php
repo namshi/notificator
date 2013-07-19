@@ -17,14 +17,15 @@ class NotifySend implements HandlerInterface
 {
     const NOTIFY_SEND_COMMAND = 'notify-send';
 
-    private $executableFinder;
+    protected $executableFinder;
 
     /**
      * Constructor.
      *
      * @param ExecutableFinder $executableFinder
      */
-    public function  __construct(ExecutableFinder $executableFinder) {
+    public function  __construct(ExecutableFinder $executableFinder)
+    {
         $this->executableFinder = $executableFinder;
     }
 
@@ -71,7 +72,8 @@ class NotifySend implements HandlerInterface
      *
      * @return boolean
      */
-    public function isExecutableAvailable() {
+    public function isExecutableAvailable()
+    {
         return null !== $this->executableFinder->find(self::NOTIFY_SEND_COMMAND);
     }
 }

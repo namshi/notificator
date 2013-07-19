@@ -14,7 +14,7 @@ class EmailTest extends PHPUnit_Framework_TestCase
     
     public function testTheHandlerDoesntHandleAnyNotificationByDefault()
     {
-        $this->assertFalse($this->handler->shouldHandle(new StubNotification2()));
+        $this->assertFalse($this->handler->shouldHandle(new \Namshi\Notificator\Notification('hello')));
     }
     
     public function testTheHandlerHandlesANotification()
@@ -34,19 +34,6 @@ class StubEmailHandler extends EmailHandler
     public function getEmailClient()
     {
         return 34;
-    }
-}
-
-class StubNotification2 implements \Namshi\Notificator\NotificationInterface
-{   
-    public function getParameters()
-    {
-        return array();
-    }
-    
-    public function setParameters(array $parameters)
-    {
-        
     }
 }
 

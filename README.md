@@ -330,6 +330,7 @@ You can take advantage of the following handlers:
 
 * `Emailvision`, which sends emails through the [Emailvision API](http://www.emailvision.com/)
 * `NotifySend`, which triggers notifications on Ubuntu
+* `RabbitMQ`, which triggers notifications through [RabbitMQ](http://www.rabbitmq.com/)
 
 If you have an idea for a new handler, don't hesitate with a pull request:
 sure, they can be implemented within your own code, but why not sharing them
