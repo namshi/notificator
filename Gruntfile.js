@@ -4,7 +4,7 @@ module.exports = function (grunt) {
             tests: {
                 command: [
                     'clear',
-                    'vendor/bin/phpspec run -n --ansi'
+                    'vendor/bin/phpspec run -n --ansi --format=dot'
                 ].join('&&'),
                 options: {
                     stdout: true
