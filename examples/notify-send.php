@@ -6,27 +6,18 @@ require __DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "vendor" . 
 use Namshi\Notificator\Notification\Handler\NotifySend as NotifySendHandler;
 use Namshi\Notificator\Manager;
 use Namshi\Notificator\Notification;
-use Namshi\Notificator\Notification\NotifySend\NotifySendNotificationInterface;
+use Symfony\Component\Process\ExecutableFinder;
+use Namshi\Notificator\Notification\NotifySend\NotifySendNotification;
 
 //  create the handler
-$handler = new NotifySendHandler();
+$handler = new NotifySendHandler(new ExecutableFinder());
 
 // create the manager and assign the handler to it
 $manager = new Manager();
 $manager->addHandler($handler);
 
 // create the notification
-class NSNotification extends Notification implements NotifySendNotificationInterface
-{
-    public function getMessage()
-    {
-        $date = new \DateTime();
-        
-        return sprintf("Yo, it's %s", $date->format('H:i'));
-    }
-}
-
-$notification = new NSNotification();
+$notification = new NotifySendNotification("...whatever message...");
 
 //  trigger the notification
 $manager->trigger($notification);
