@@ -13,4 +13,4 @@ before_install:
  - sudo apt-get update -qq
  - sudo apt-get install -qq notify-osd
 
-script: phpunit
+script: phpunit; php vendor/bin/phpspec run --format=dot
