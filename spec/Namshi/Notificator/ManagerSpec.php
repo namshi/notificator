@@ -10,6 +10,7 @@ class ManagerSpec extends ObjectBehavior
     function it_is_initializable()
     {
         $this->shouldHaveType('Namshi\Notificator\Manager');
+        $this->shouldImplement('Namshi\Notificator\ManagerInterface');
     }
 
     function it_comes_with_no_handlers_by_default()
