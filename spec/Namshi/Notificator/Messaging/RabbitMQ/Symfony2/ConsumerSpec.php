@@ -34,10 +34,7 @@ class ConsumerSpec extends ObjectBehavior
         $this->execute($amqpMessage)->shouldReturn('AAA');
     }
 
-    /**
-     * @param \Namshi\Notificator\ManagerInterface $manager
-     */
-    function it_throws_exception_when_message_does_not_implement_interface($manager)
+    function it_throws_exception_when_message_does_not_implement_interface()
     {
         $notification = new \StdClass('hello');
         $amqpMessage = new AMQPMessage(serialize($notification));

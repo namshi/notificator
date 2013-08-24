@@ -21,7 +21,7 @@ class Notification implements NotificationInterface
         $this->setMessage($message);
         $this->setParameters($parameters);
     }
-    
+
     /**
      * @inheritDoc
      */
