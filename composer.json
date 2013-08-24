@@ -30,7 +30,6 @@
     "autoload": {
         "psr-0": {
             "Namshi\\Notificator": "src/",
-            "Cordoval\\PhpSpec": "src/",
             "Namshi\\Notificator\\Test": "tests/"
         }
     }
