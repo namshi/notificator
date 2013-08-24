@@ -20,13 +20,15 @@ class HipChatSpec extends ObjectBehavior
         $this->shouldImplement('Namshi\Notificator\Notification\Handler\HandlerInterface');
     }
 
-    /**
-     * @param \Namshi\Notificator\Notification\HipChat\HipChatNotificationInterface $hipChatNotification
-     * @param \Namshi\Notificator\Notification\Email\EmailNotificationInterface $otherNotification
-     */
-    function it_should_handle_hipchat_notifications_only($hipChatNotification, $otherNotification)
+    function it_should_handle_hipchat_notifications_only()
     {
-        $this->object->shouldHandle($hipChatNotification)->shouldReturn(true);
-        $this->object->shouldHandle($otherNotification)->shouldReturn(false);
+        $hipChatNotification = new HipChatNotification('a', 'b', []);
+        $otherNotification = new EmailNotification('a', []);
+        if (!$this->getWrappedObject()->shouldHandle($hipChatNotification)) {
+            throw new \Exception('fails');
+        }
+        if ($this->getWrappedObject()->shouldHandle($otherNotification)) {
+            throw new \Exception('fails');
+        }
     }
 }
