@@ -3,11 +3,51 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "5060b58c75d82c84bd0bc0f95791e1a4",
+    "hash": "73de93023421fc63f93648f262c17e1d",
     "packages": [
 
     ],
     "packages-dev": [
+        {
+            "name": "cordoval/phpspec-stubs",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/cordoval/phpspec-stubs.git",
+                "reference": "9ecc0a935910c50cc5eeb640782076ea0b8e1114"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/cordoval/phpspec-stubs/zipball/9ecc0a935910c50cc5eeb640782076ea0b8e1114",
+                "reference": "9ecc0a935910c50cc5eeb640782076ea0b8e1114",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5",
+                "phpspec/phpspec": "dev-master"
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Luis Cordova",
+                    "email": "cordoval@gmail.com",
+                    "homepage": "http://github.com/cordoval/fazer"
+                }
+            ],
+            "description": "PhpSpec stubs for IDE.",
+            "homepage": "https://github.com/cordoval/phpspec-stubs",
+            "keywords": [
+                "BDD",
+                "ide",
+                "phpspec",
+                "phpstorm"
+            ],
+            "time": "2013-08-24 05:15:51"
+        },
         {
             "name": "doctrine/common",
             "version": "2.3.0",
@@ -1628,7 +1668,8 @@
     ],
     "minimum-stability": "stable",
     "stability-flags": {
-        "phpspec/phpspec": 20
+        "phpspec/phpspec": 20,
+        "cordoval/phpspec-stubs": 20
     },
     "platform": [
 
