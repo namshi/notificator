@@ -2,6 +2,8 @@
 
 namespace spec\Namshi\Notificator\Notification\Handler;
 
+use Namshi\Notificator\Notification\Email\EmailNotification;
+use Namshi\Notificator\Notification\HipChat\HipChatNotification;
 use PhpSpec\ObjectBehavior;
 
 class HipChatSpec extends ObjectBehavior
