@@ -25,7 +25,7 @@ class Consumer implements ConsumerInterface
      */
     public function __construct(ManagerInterface $notificationManager)
     {
-        $this->setNotificationManager($notificationManager);
+        $this->notificationManager = $notificationManager;
     }
     
     /**
@@ -39,7 +39,7 @@ class Consumer implements ConsumerInterface
     {
         $notification = $this->validateNotification($message->body);
         
-        return $this->getNotificationManager()->trigger($notification);
+        return $this->notificationManager->trigger($notification);
     }
     
     /**
@@ -59,25 +59,5 @@ class Consumer implements ConsumerInterface
         }
         
         throw new InvalidArgumentException(self::ERROR_INVALID_NOTIFICATION);
-    }
-    
-    /**
-     * Returns the notification manager used by this class.
-     * 
-     * @return ManagerInterface
-     */
-    public function getNotificationManager()
-    {
-        return $this->notificationManager;
-    }
-
-    /**
-     * Sets the notification manager for this class.
-     * 
-     * @param ManagerInterface $notificationManager
-     */
-    public function setNotificationManager(ManagerInterface $notificationManager)
-    {
-        $this->notificationManager = $notificationManager;
     }
 }
