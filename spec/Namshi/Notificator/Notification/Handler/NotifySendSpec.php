@@ -3,7 +3,6 @@
 namespace spec\Namshi\Notificator\Notification\Handler;
 
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 
 class NotifySendSpec extends ObjectBehavior
 {
@@ -17,7 +16,7 @@ class NotifySendSpec extends ObjectBehavior
 
     function it_is_initializable()
     {
-        $this->shouldHaveType('Namshi\Notificator\Notification\Handler\HipChat');
+        $this->shouldHaveType('Namshi\Notificator\Notification\Handler\NotifySend');
         $this->shouldImplement('Namshi\Notificator\Notification\Handler\HandlerInterface');
     }
 }
