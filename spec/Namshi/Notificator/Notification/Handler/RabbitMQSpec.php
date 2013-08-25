@@ -7,7 +7,6 @@ use Namshi\Notificator\Notification\RabbitMQ\RabbitMQNotification;
 use PhpAmqpLib\Channel\AMQPChannel;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
-use Symfony\Component\Console\Input\InputArgument;
 
 class RabbitMQSpec extends ObjectBehavior
 {
