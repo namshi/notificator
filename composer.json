@@ -27,7 +27,7 @@
     ],
     "autoload": {
         "psr-0": {
-            "Namshi\\Notificator": "src/
+            "Namshi\\Notificator": "src/"
         }
     }
 }
