@@ -17,7 +17,7 @@ class HipChat implements HandlerInterface
      * Constructor.
      *
      */
-    public function  __construct(HipChatClient $hipchat)
+    public function __construct(HipChatClient $hipchat)
     {
         $this->setHipchat($hipchat);
     }

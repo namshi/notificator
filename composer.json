@@ -2,13 +2,13 @@
     "name": "namshi/notificator",
     "description": "A lightweight library to handle notifications the smart way.",
     "require-dev": {
-        "phpunit/phpunit": "3.7.*",
+        "phpspec/phpspec": "dev-master",
         "oldsound/rabbitmq-bundle": "1.1.3",
         "symfony/process": "v2.2.3",
-        "hipchat/hipchat-php": "1.2.*"
+        "hipchat/hipchat-php": "1.2.*",
+        "cordoval/phpspec-stubs": "dev-master"
     },
     "suggest": {
-        "phpunit/phpunit": "To easily run tests locally",
         "oldsound/rabbitmq-bundle": "To send RabbitMQ notifications in Symfony2",
         "symfony/process": "To trigger notify-send notifications under Ubuntu",
         "videlalvaro/php-amqplib": "To send notifications through RabbitMQ",
@@ -19,12 +19,15 @@
         {
             "name": "odino",
             "email": "alessandro.nadalin@gmail.com"
+        },
+        {
+            "name": "cordoval",
+            "email": "cordoval@gmail.com"
         }
     ],
     "autoload": {
         "psr-0": {
-            "Namshi\\Notificator": "src/",
-            "Namshi\\Notificator\\Test": "tests/"
+            "Namshi\\Notificator": "src/"
         }
     }
 }

@@ -9,10 +9,11 @@ class Notification implements NotificationInterface
 {
     protected $parameters = array();
     protected $message;
-    
+
     /**
      * Constructor
-     * 
+     *
+     * @param $message
      * @param array $parameters
      */
     public function __construct($message, array $parameters = array())
@@ -20,7 +21,7 @@ class Notification implements NotificationInterface
         $this->setMessage($message);
         $this->setParameters($parameters);
     }
-    
+
     /**
      * @inheritDoc
      */
