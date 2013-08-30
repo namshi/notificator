@@ -2,9 +2,9 @@
 
 namespace Namshi\Notificator\Notification\Handler;
 
+use Namshi\Notificator\Notification\Email\Emailvision\ClientInterface;
 use Namshi\Notificator\NotificationInterface;
 use Namshi\Notificator\Notification\Email\Emailvision\EmailvisionNotificationInterface;
-use Namshi\Emailvision\Client;
 
 /**
  * This class handles notifications that should be sent via email.
@@ -12,13 +12,13 @@ use Namshi\Emailvision\Client;
 class Emailvision extends Email
 {
     protected $emailClient;
-    
+
     /**
      * Constructor
-     * 
-     * @param \Namshi\Emailvision\Client $emailClient
+     *
+     * @param \Namshi\Notificator\Notification\Email\Emailvision\ClientInterface $emailClient
      */
-    public function __construct(Client $emailClient)
+    public function __construct(ClientInterface $emailClient)
     {
         $this->setEmailClient($emailClient);
     }
@@ -48,9 +48,9 @@ class Emailvision extends Email
     /**
      * Sets the email client associated with this handler.
      * 
-     * @param \Namshi\Emailvision\Client $emailClient
+     * @param \Namshi\Notificator\Notification\Email\Emailvision\ClientInterface $emailClient
      */
-    public function setEmailClient(Client $emailClient)
+    public function setEmailClient(ClientInterface $emailClient)
     {
         $this->emailClient = $emailClient;
     }
@@ -58,7 +58,7 @@ class Emailvision extends Email
     /**
      * Returns the email client used by this handler.
      * 
-     * @return \Namshi\Emailvision\Client
+     * @return \Namshi\Notificator\Notification\Email\Emailvision\ClientInterface
      */
     public function getEmailClient()
     {

@@ -346,3 +346,11 @@ under the `examples` directory:
 * [creating a custom handler that sends an email](https://github.com/namshi/notificator/blob/master/examples/email-custom-handler.php)
 * [using the notify-send handler](https://github.com/namshi/notificator/blob/master/examples/notify-send.php)
 * [triggering a notification that is not handled by any handler](https://github.com/namshi/notificator/blob/master/examples/unhandled.php)
+
+## Running specs
+
+In order to run the spec suite after running `composer install` do the following:
+
+``` cli
+php vendor/bin/phpspec run --format=dot
+```

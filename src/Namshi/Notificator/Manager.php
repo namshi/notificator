@@ -2,7 +2,6 @@
 
 namespace Namshi\Notificator;
 
-use Namshi\Notificator\NotificationInterface;
 use Namshi\Notificator\Notification\Handler\HandlerInterface;
 
 /**
