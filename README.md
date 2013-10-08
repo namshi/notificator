@@ -2,6 +2,8 @@
 
 [![Build Status](https://travis-ci.org/namshi/notificator.png?branch=master)](https://travis-ci.org/namshi/notificator)
 
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/82e20b9d-e943-4d19-a9d3-b85a2a48861a/mini.png)](https://insight.sensiolabs.com/projects/82e20b9d-e943-4d19-a9d3-b85a2a48861a)
+
 *Notificator* is a very simple and
 lightweight library to handle
 notifications the smart way.
