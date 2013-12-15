@@ -4,12 +4,12 @@ namespace spec\Namshi\Notificator\Notification\Handler;
 
 use Namshi\Notificator\Notification\Sms\SmsNotification;
 use PhpSpec\ObjectBehavior;
-use Namshi\Smscountry\Client;
+use Namshi\SMSCountry\Client;
 
-class SmscountrySpec extends ObjectBehavior
+class SMSCountrySpec extends ObjectBehavior
 {
     /**
-     * @param \Namshi\Smscountry\Client $client
+     * @param \Namshi\SMSCountry\Client $client
      */
     function let($client)
     {
@@ -18,7 +18,7 @@ class SmscountrySpec extends ObjectBehavior
 
     function it_is_initializable()
     {
-        $this->shouldHaveType('Namshi\Notificator\Notification\Handler\Smscountry');
+        $this->shouldHaveType('Namshi\Notificator\Notification\Handler\SMSCountry');
         $this->shouldImplement('Namshi\Notificator\Notification\Handler\HandlerInterface');
     }
 
@@ -32,7 +32,7 @@ class SmscountrySpec extends ObjectBehavior
 
     /**
      * @param  \Namshi\Notificator\Notification\Sms\SmsNotification $notification
-     * @param  \Namshi\Smscountry\Client $client
+     * @param  \Namshi\SMSCountry\Client $client
      */
     function it_handles_sms_notification($notification, $client)
     {
