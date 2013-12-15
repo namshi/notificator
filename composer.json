@@ -7,7 +7,7 @@
         "symfony/process": "v2.2.3",
         "hipchat/hipchat-php": "1.2.*",
         "cordoval/phpspec-stubs": "dev-master",
-        "namshi/smscountry": "1.0.2"
+        "namshi/smscountry": "1.0.3"
     },
     "suggest": {
         "oldsound/rabbitmq-bundle": "To send RabbitMQ notifications in Symfony2",

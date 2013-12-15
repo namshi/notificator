@@ -4,9 +4,9 @@ namespace Namshi\Notificator\Notification\Handler;
 
 use Namshi\Notificator\NotificationInterface;
 use Namshi\Notificator\Notification\Sms\SmsNotification;
-use Namshi\Smscountry\Client;
+use Namshi\SMSCountry\Client;
 
-class Smscountry implements HandlerInterface
+class SMSCountry implements HandlerInterface
 {
     protected $client;
 
