@@ -29,6 +29,7 @@ class Manager implements ManagerInterface
     public function __construct(array $handlers = array(), LoggerInterface $logger = null)
     {
         $this->setHandlers($handlers);
+        $this->setLogger($logger);
     }
     
     /**
@@ -39,8 +40,8 @@ class Manager implements ManagerInterface
         foreach ($this->getHandlers() as $handler) {
             if ($handler->shouldHandle($notification)) {
                 if ($logger = $this->getLogger()) {
-                    $message = sprintf('notification handler "%s" processed the message "%s"', get_class($handler), $notification->getMessage());
-                    $logger->info($message);
+                    $message = sprintf('notification handler "%s" processed message', get_class($handler));
+                    $logger->info($message, array('Notification' => serialize($notification)));
                 }
 
                 if (false === $handler->handle($notification)) {
