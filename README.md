@@ -330,6 +330,7 @@ notification from each component of our SOA, mostly via RabbitMQ.
 
 You can take advantage of the following handlers:
 
+* `SwiftMailer`, which lets you use the amazing [SwiftMailer](http://swiftmailer.org/) to send email notifications through any SMTP server (ie. Amazon's SES, or SendGrid)
 * `HipChat`, which posts messages in an [HipChat](https://www.hipchat.com) room
 * `Emailvision`, which sends emails through the [Emailvision API](http://www.emailvision.com/)
 * `NotifySend`, which triggers notifications on Ubuntu

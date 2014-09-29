@@ -8,13 +8,15 @@
         "hipchat/hipchat-php": "1.2.*",
         "cordoval/phpspec-stubs": "dev-master",
         "namshi/smscountry": "~1.0",
-        "psr/log": "~1.0"
+        "psr/log": "~1.0",
+        "swiftmailer/swiftmailer": "~5.0.0"
     },
     "suggest": {
         "oldsound/rabbitmq-bundle": "To send RabbitMQ notifications in Symfony2",
         "symfony/process": "To trigger notify-send notifications under Ubuntu",
         "videlalvaro/php-amqplib": "To send notifications through RabbitMQ",
-        "hipchat/hipchat-php": "To send notifications over HipChat"
+        "hipchat/hipchat-php": "To send notifications over HipChat",
+        "swiftmailer/swiftmailer": "To send notification with SwiftMailer (for example, over AWS's SES service)"
     },
     "license": "MIT",
     "authors": [

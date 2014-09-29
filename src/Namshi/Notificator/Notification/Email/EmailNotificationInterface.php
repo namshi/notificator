@@ -13,7 +13,7 @@ interface EmailNotificationInterface extends NotificationInterface
     /**
      * Returns the email address that will receive this notification.
      * 
-     * @return true|null
+     * @return string|null
      */
     function getRecipientAddress();
     
