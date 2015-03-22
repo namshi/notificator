@@ -20,7 +20,7 @@ class Emailvision extends Email
      */
     public function __construct(ClientInterface $emailClient)
     {
-        $this->setEmailClient($emailClient);
+        $this->emailClient = $emailClient;
     }
     
     /**
@@ -28,11 +28,13 @@ class Emailvision extends Email
      */
     public function handle(NotificationInterface $notification)
     {
-        $this->getEmailClient()->sendEmail(
-            $notification->getEmailTemplate(),
-            $notification->getRecipientAddress(),
-            $notification->getParameters()
-        );
+        foreach ($notification->getRecipientAddresses() as $recipientAddress) {
+            $this->getEmailClient()->sendEmail(
+                $notification->getEmailTemplate(),
+                $recipientAddress,
+                $notification->getParameters()
+            );
+        }
 
         return true;
     }
@@ -43,16 +45,6 @@ class Emailvision extends Email
     public function shouldHandle(NotificationInterface $notification)
     {
         return $notification instanceof EmailvisionNotificationInterface;
-    }
-
-    /**
-     * Sets the email client associated with this handler.
-     * 
-     * @param \Namshi\Notificator\Notification\Email\Emailvision\ClientInterface $emailClient
-     */
-    public function setEmailClient(ClientInterface $emailClient)
-    {
-        $this->emailClient = $emailClient;
     }
     
     /**

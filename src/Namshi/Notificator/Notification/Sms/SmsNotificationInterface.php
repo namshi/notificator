@@ -16,9 +16,4 @@ interface SmsNotificationInterface extends NotificationInterface
      * @return int
      */
     public function getRecipientNumber();
-    
-    /**
-     * Sets the phone number that will receive this notification.
-     */
-    public function setRecipientNumber($recipientNumber);
 }

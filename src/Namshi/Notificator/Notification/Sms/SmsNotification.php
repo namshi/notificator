@@ -20,9 +20,9 @@ class SmsNotification extends Notification implements SmsNotificationInterface
      */
     public function __construct($recipientNumber, $message, array $parameters = array())
     {
-        $this->setRecipientNumber($recipientNumber);
-        $this->setParameters($parameters);
-        $this->setMessage($message);
+        $this->recipientAddress = $recipientNumber;
+        $this->parameters       = $parameters;
+        $this->message          = $message;
     }
 
     /**
@@ -31,13 +31,5 @@ class SmsNotification extends Notification implements SmsNotificationInterface
     public function getRecipientNumber()
     {
         return $this->recipientAddress;
-    }
-
-    /**
-     * @inheritDoc
-     */
-    public function setRecipientNumber($recipientNumber)
-    {
-        $this->recipientAddress = $recipientNumber;
     }
 }

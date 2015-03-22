@@ -29,15 +29,19 @@ class NotifySendSpec extends ObjectBehavior
     function it_should_handle_notifysend_notifications_only($finder)
     {
         $notification = new NotifySendNotification('message', []);
-        $otherNotification = new EmailNotification('recipient', []);
+        $otherNotification = new EmailNotification(['recipient'], []);
         $finder->find(NotifySend::NOTIFY_SEND_COMMAND)->willReturn(true);
+
         if (!$this->getWrappedObject()->shouldHandle($notification)) {
             throw new \Exception('fails');
         }
+
         if ($this->getWrappedObject()->shouldHandle($otherNotification)) {
             throw new \Exception('fails');
         }
+
         $finder->find(NotifySend::NOTIFY_SEND_COMMAND)->willReturn(null);
+
         if ($this->getWrappedObject()->shouldHandle($notification)) {
             throw new \Exception('fails');
         }

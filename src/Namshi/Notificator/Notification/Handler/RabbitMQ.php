@@ -19,7 +19,7 @@ class RabbitMQ implements HandlerInterface
      */
     public function  __construct(AMQPChannel $publisher)
     {
-        $this->setPublisher($publisher);
+        $this->publisher = $publisher;
     }
 
     /**
@@ -45,10 +45,5 @@ class RabbitMQ implements HandlerInterface
     public function getPublisher()
     {
         return $this->publisher;
-    }
-
-    public function setPublisher(AMQPChannel $publisher)
-    {
-        $this->publisher = $publisher;
     }
 }

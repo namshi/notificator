@@ -23,7 +23,7 @@ class SwiftMailer extends Email
      */
     public function __construct(\Swift_Mailer $mailer)
     {
-        $this->setMailer($mailer);
+        $this->mailer = $mailer;
     }
 
     /**
@@ -42,14 +42,6 @@ class SwiftMailer extends Email
     public function shouldHandle(NotificationInterface $notification)
     {
         return $notification instanceof SwiftMailerNotificationInterface;
-    }
-
-    /**
-     * @param \Swift_Mailer $mailer
-     */
-    public function setMailer(\Swift_Mailer $mailer)
-    {
-        $this->mailer = $mailer;
     }
 
     /**

@@ -25,12 +25,4 @@ interface NotificationInterface
      * @return string
      */
     public function getMessage();
-    
-    /**
-     * Sets an array of parameters that are sent along with this
-     * notification.
-     * They are usually used by handlers to build the actual notification (ie. 
-     * dynamic content in emails or smses).
-     */
-    function setParameters(array $parameters);
 }

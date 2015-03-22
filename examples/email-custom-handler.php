@@ -15,7 +15,8 @@ class SimpleEmailHandler extends EmailHandler
 {    
     public function handle(NotificationInterface $notification)
     {
-        mail($notification->getRecipientAddress(), $notification->subject, $notification->body);
+        $to = implode(',', $notification->getRecipientAddresses());
+        mail($to, $notification->subject, $notification->body);
     }
 }
 

@@ -18,25 +18,14 @@ class SwiftMailerNotification extends EmailNotification implements NotificationI
     /**
      * Constructor.
      *
-     * @param string $emailTemplate
-     * @param string $recipientAddress
-     * @param array $parameters
+     * @param string        $emailTemplate
+     * @param array|string  $recipientAddresses
+     * @param array         $parameters
      */
-    public function __construct($emailTemplate, $recipientAddress, array $parameters = array())
+    public function __construct($emailTemplate, $recipientAddresses, array $parameters = array())
     {
-        $this->setEmailTemplate($emailTemplate);
-        $this->setRecipientAddress($recipientAddress);
-        $this->setParameters($parameters);
-    }
+        parent::__construct($recipientAddresses, $parameters);
 
-
-    /**
-     * Sets the email template that should be used for this notification.
-     *
-     * @param string $emailTemplate
-     */
-    public function setEmailTemplate($emailTemplate)
-    {
         $this->emailTemplate = $emailTemplate;
     }
 

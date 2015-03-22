@@ -26,7 +26,8 @@ class HipChatSpec extends ObjectBehavior
     function it_should_handle_hipchat_notifications_only()
     {
         $hipChatNotification = new HipChatNotification('a', 'b', []);
-        $otherNotification = new EmailNotification('a', []);
+        $otherNotification   = new EmailNotification(['a'], []);
+
         if (!$this->getWrappedObject()->shouldHandle($hipChatNotification)) {
             throw new \Exception('fails');
         }

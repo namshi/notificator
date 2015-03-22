@@ -24,8 +24,8 @@ class EmailvisionSpec extends ObjectBehavior
 
     function it_should_handle_emailvision_notifications_only()
     {
-        $emailvisionNotification = new EmailvisionNotification('a', 'b', []);
-        $otherNotification = new EmailNotification('a', []);
+        $emailvisionNotification = new EmailvisionNotification('a', ['b'], []);
+        $otherNotification = new EmailNotification(['a'], []);
         if (!$this->getWrappedObject()->shouldHandle($emailvisionNotification)) {
             throw new \Exception('fails');
         }
@@ -41,7 +41,7 @@ class EmailvisionSpec extends ObjectBehavior
     function it_handles_emailvision_notification($notification, $client)
     {
         $notification->getEmailTemplate()->willReturn('template')->shouldBeCalled();
-        $notification->getRecipientAddress()->willReturn('recipient')->shouldBeCalled();
+        $notification->getRecipientAddresses()->willReturn(['recipient'])->shouldBeCalled();
         $notification->getParameters()->willReturn(['s', 'i'])->shouldBeCalled();
 
         $this->handle($notification)->shouldBe(true);
