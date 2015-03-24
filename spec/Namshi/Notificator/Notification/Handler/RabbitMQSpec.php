@@ -26,11 +26,13 @@ class RabbitMQSpec extends ObjectBehavior
 
     function it_should_handle_rabbitmq_notifications_only()
     {
-        $notification = new RabbitMQNotification('message', []);
-        $otherNotification = new EmailNotification(['recipient'], []);
+        $notification      = new RabbitMQNotification('message', []);
+        $otherNotification = new EmailNotification('recipient', []);
+
         if (!$this->getWrappedObject()->shouldHandle($notification)) {
             throw new \Exception('fails');
         }
+
         if ($this->getWrappedObject()->shouldHandle($otherNotification)) {
             throw new \Exception('fails');
         }

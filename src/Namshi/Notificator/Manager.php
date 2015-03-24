@@ -29,7 +29,7 @@ class Manager implements ManagerInterface
     public function __construct(array $handlers = array(), LoggerInterface $logger = null)
     {
         $this->handlers = $handlers;
-        $this->logger = $logger;
+        $this->logger   = $logger;
     }
     
     /**
