@@ -19,7 +19,7 @@ class HipChat implements HandlerInterface
      */
     public function __construct(HipChatClient $hipchat)
     {
-        $this->setHipchat($hipchat);
+        $this->hipchat = $hipchat;
     }
 
     /**
@@ -57,15 +57,5 @@ class HipChat implements HandlerInterface
     public function getHipchat()
     {
         return $this->hipchat;
-    }
-
-    /**
-     * Sets the HipChat instance associated with this handler.
-     * 
-     * @param \HipChat\HipChat $hipchat
-     */
-    public function setHipchat(HipChatClient $hipchat)
-    {
-        $this->hipchat = $hipchat;
     }
 }

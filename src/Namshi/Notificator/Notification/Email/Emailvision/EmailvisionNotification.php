@@ -14,15 +14,15 @@ class EmailvisionNotification extends EmailNotification implements EmailvisionNo
     /**
      * Constructor.
      * 
-     * @param string $emailTemplate
-     * @param string $recipientAddress
-     * @param array $parameters
+     * @param string        $emailTemplate
+     * @param array|string  $recipientAddresses
+     * @param array         $parameters
      */
-    public function __construct($emailTemplate, $recipientAddress, array $parameters = array())
+    public function __construct($emailTemplate, $recipientAddresses, array $parameters = array())
     {
-        $this->setEmailTemplate($emailTemplate);
-        $this->setRecipientAddress($recipientAddress);
-        $this->setParameters($parameters);
+        parent::__construct($recipientAddresses, $parameters);
+
+        $this->emailTemplate = $emailTemplate;
     }
     
     /**
@@ -31,15 +31,5 @@ class EmailvisionNotification extends EmailNotification implements EmailvisionNo
     public function getEmailTemplate()
     {
         return $this->emailTemplate;
-    }
-
-    /**
-     * Sets the email template that should be used for this notification.
-     * 
-     * @param string $emailTemplate
-     */
-    public function setEmailTemplate($emailTemplate)
-    {
-        $this->emailTemplate = $emailTemplate;
     }
 }

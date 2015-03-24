@@ -8,7 +8,7 @@ class EmailNotificationSpec extends ObjectBehaviorComplete
 {
     function let()
     {
-        $this->beConstructedWith('recipient', []);
+        $this->beConstructedWith(['recipient'], []);
     }
 
     function it_is_initializable()
@@ -16,5 +16,19 @@ class EmailNotificationSpec extends ObjectBehaviorComplete
         $this->shouldHaveType('Namshi\Notificator\Notification\Email\EmailNotification');
         $this->shouldHaveType('Namshi\Notificator\Notification');
         $this->shouldImplement('Namshi\Notificator\Notification\Email\EmailNotificationInterface');
+    }
+
+    function it_should_handle_string_as_recipient()
+    {
+        $this->beConstructedWith('recipient');
+
+        $this->getRecipientAddresses()->shouldReturn(['recipient']);
+    }
+
+    function it_should_handle_array_of_recipient()
+    {
+        $this->beConstructedWith(['recipient', 'recipient2', 'recipient3']);
+
+        $this->getRecipientAddresses()->shouldReturn(['recipient', 'recipient2', 'recipient3']);
     }
 }

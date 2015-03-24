@@ -18,8 +18,8 @@ class Notification implements NotificationInterface
      */
     public function __construct($message, array $parameters = array())
     {
-        $this->setMessage($message);
-        $this->setParameters($parameters);
+        $this->message    = $message;
+        $this->parameters = $parameters;
     }
 
     /**
@@ -32,14 +32,14 @@ class Notification implements NotificationInterface
 
     /**
      * Sets the message transported by this notification.
-     * 
+     *
      * @param string $message
      */
-    public function setMessage($message)
-    {
+     public function setMessage($message)
+     {
         $this->message = $message;
-    }
-    
+     }
+
     /**
      * Returns a parameter.
      * 
@@ -59,13 +59,5 @@ class Notification implements NotificationInterface
     public function getParameters()
     {
         return $this->parameters;
-    }
-
-    /**
-     * @inheritDoc
-     */
-    public function setParameters(array $parameters)
-    {
-        $this->parameters = $parameters;
     }
 }

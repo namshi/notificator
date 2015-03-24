@@ -27,7 +27,7 @@ class SwiftMailerSpec extends ObjectBehavior
     function it_should_handle_swiftmailer_notifications_only()
     {
         $notification = new SwiftMailerNotification(new \Swift_Message(), []);
-        $otherNotification = new EmailNotification('a', []);
+        $otherNotification = new EmailNotification(['a'], []);
         if (!$this->getWrappedObject()->shouldHandle($notification)) {
             throw new \Exception('fails, does not handle');
         }

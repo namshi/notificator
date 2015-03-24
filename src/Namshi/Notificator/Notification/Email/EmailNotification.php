@@ -9,33 +9,30 @@ use Namshi\Notificator\Notification;
  */
 class EmailNotification extends Notification implements EmailNotificationInterface
 {
-    protected $recipientAddress;
-    
+    /**
+     * Recipient Email Addresses.
+     *
+     * @var array
+     */
+    protected $recipientAddresses = [];
+
     /**
      * Constructor.
      * 
-     * @param string $recipientAddress
+     * @param array|string $recipientAddress
      * @param array $parameters
      */
-    public function __construct($recipientAddress, array $parameters = array())
+    public function __construct($recipientAddresses, array $parameters = array())
     {
-        $this->setRecipientAddress($recipientAddress);
-        $this->setParameters($parameters);
+        $this->recipientAddresses = is_array($recipientAddresses) ? $recipientAddresses : [$recipientAddresses];
+        $this->parameters         = $parameters;
     }
 
     /**
      * @inheritDoc
      */
-    public function getRecipientAddress()
+    public function getRecipientAddresses()
     {
-        return $this->recipientAddress;
-    }
-
-    /**
-     * @inheritDoc
-     */
-    public function setRecipientAddress($recipientAddress)
-    {
-        $this->recipientAddress = $recipientAddress;
+        return $this->recipientAddresses;
     }
 }

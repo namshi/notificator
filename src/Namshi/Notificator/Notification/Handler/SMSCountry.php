@@ -15,7 +15,7 @@ class SMSCountry implements HandlerInterface
      */
     public function __construct(Client $client)
     {
-        $this->setClient($client);
+        $this->client = $client;
     }
 
     /**
@@ -34,14 +34,6 @@ class SMSCountry implements HandlerInterface
         $this->getClient()->sendSms($notification->getRecipientNumber(), $notification->getMessage());
 
         return true;
-    }
-
-    /**
-     * @param ClientInterface $client
-     */
-    public function setClient($client)
-    {
-        $this->client = $client;
     }
 
     /**

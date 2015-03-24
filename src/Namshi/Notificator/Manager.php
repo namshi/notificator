@@ -28,8 +28,8 @@ class Manager implements ManagerInterface
      */
     public function __construct(array $handlers = array(), LoggerInterface $logger = null)
     {
-        $this->setHandlers($handlers);
-        $this->setLogger($logger);
+        $this->handlers = $handlers;
+        $this->logger   = $logger;
     }
     
     /**
@@ -64,16 +64,6 @@ class Manager implements ManagerInterface
     }
 
     /**
-     * Sets all the handlers associated to this manager.
-     * 
-     * @param array $handlers
-     */
-    public function setHandlers($handlers)
-    {
-        $this->handlers = $handlers;
-    }
-
-    /**
      * Adds an handler to this manager.
      *
      * @param HandlerInterface $handler
@@ -81,14 +71,6 @@ class Manager implements ManagerInterface
     public function addHandler(HandlerInterface $handler)
     {
         $this->handlers[] = $handler;
-    }
-
-    /**
-     * @param \Psr\Log\LoggerInterface $logger
-     */
-    public function setLogger($logger)
-    {
-        $this->logger = $logger;
     }
 
     /**

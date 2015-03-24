@@ -8,8 +8,9 @@ class EmailvisionNotificationSpec extends ObjectBehaviorComplete
 {
     function let()
     {
-        $this->beConstructedWith('template', 'recipient', []);
+        $this->beConstructedWith('template', ['recipient'], []);
     }
+
 
     function it_is_initializable()
     {
