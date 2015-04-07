@@ -20,14 +20,14 @@ class EmailNotificationSpec extends ObjectBehaviorComplete
 
     function it_should_handle_string_as_recipient()
     {
-        $this->beConstructedWith('recipient');
+        $this->beConstructedWith('template', 'recipient');
 
         $this->getRecipientAddresses()->shouldReturn(['recipient']);
     }
 
     function it_should_handle_array_of_recipient()
     {
-        $this->beConstructedWith(['recipient', 'recipient2', 'recipient3']);
+        $this->beConstructedWith('template', ['recipient', 'recipient2', 'recipient3']);
 
         $this->getRecipientAddresses()->shouldReturn(['recipient', 'recipient2', 'recipient3']);
     }
