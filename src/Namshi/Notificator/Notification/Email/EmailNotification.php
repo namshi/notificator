@@ -10,6 +10,13 @@ use Namshi\Notificator\Notification;
 class EmailNotification extends Notification implements EmailNotificationInterface
 {
     /**
+     * Email Template
+     *
+     * @var string
+     */
+    protected $emailTemplate;
+
+    /**
      * Recipient Email Addresses.
      *
      * @var array
@@ -22,10 +29,11 @@ class EmailNotification extends Notification implements EmailNotificationInterfa
      * @param array|string $recipientAddress
      * @param array $parameters
      */
-    public function __construct($recipientAddresses, array $parameters = array())
+    public function __construct($emailTemplate, $recipientAddresses, array $parameters = array())
     {
         $this->recipientAddresses = is_array($recipientAddresses) ? $recipientAddresses : [$recipientAddresses];
         $this->parameters         = $parameters;
+        $this->emailTemplate      = $emailTemplate;
     }
 
     /**
@@ -34,5 +42,13 @@ class EmailNotification extends Notification implements EmailNotificationInterfa
     public function getRecipientAddresses()
     {
         return $this->recipientAddresses;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function getEmailTemplate()
+    {
+        return $this->emailTemplate;
     }
 }

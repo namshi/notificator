@@ -32,16 +32,16 @@ class SimpleEmailNotification extends EmailNotification implements EmailNotifica
     public $subject;
     public $body;
     
-    public function __construct($recipientAddress, $subject, $body, array $parameters = array())
+    public function __construct($emailTemplate, $recipientAddress, $subject, $body, array $parameters = array())
     {
-        parent::__construct($recipientAddress, $parameters);
+        parent::__construct($emailTemplate, $recipientAddress, $parameters);
         
         $this->subject  = $subject;
         $this->body     = $body;
     }
 }
 
-$notification = new SimpleEmailNotification('YOUR_EMAIL@gmail.com', 'Test email', 'Hello!');
+$notification = new SimpleEmailNotification('test_email', 'YOUR_EMAIL@gmail.com', 'Test email', 'Hello!');
 
 //  trigger the notification
 $manager->trigger($notification);
