@@ -2,6 +2,7 @@
 
 namespace Namshi\Notificator;
 
+use Namshi\Notificator\Notification\Handler\ChainedNotificationHandler;
 use Namshi\Notificator\Notification\Handler\HandlerInterface;
 use Psr\Log\LoggerInterface;
 
@@ -12,7 +13,7 @@ use Psr\Log\LoggerInterface;
 class Manager implements ManagerInterface
 {
     /**
-     * @var array
+     * @var HandlerInterface[]
      */
     protected $handlers = array();
 
@@ -20,14 +21,16 @@ class Manager implements ManagerInterface
      * @var \Psr\Log\LoggerInterface
      */
     protected $logger;
-    
+
     /**
      * Constructor.
-     * 
-     * @param array $handlers
+     *
+     * @param array           $handlers
+     * @param LoggerInterface $logger
      */
     public function __construct(array $handlers = array(), LoggerInterface $logger = null)
     {
+        $handlers[] = new ChainedNotificationHandler($this);
         $this->handlers = $handlers;
         $this->logger   = $logger;
     }
@@ -56,7 +59,7 @@ class Manager implements ManagerInterface
     /**
      * Returns all the handlers associated to this manager.
      * 
-     * @return array
+     * @return HandlerInterface[]
      */
     public function getHandlers()
     {
