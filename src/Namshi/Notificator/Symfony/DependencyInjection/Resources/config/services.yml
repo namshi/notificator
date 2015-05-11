@@ -1,0 +1,7 @@
+parameters:
+    namshi.notificator.manager.class: Namshi\Notificator\Manager
+
+services:
+    notificator.manager:
+        class: %namshi.notificator.manager.class%
+        arguments: [[], @logger]
