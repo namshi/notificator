@@ -12,7 +12,7 @@ use Symfony\Component\HttpKernel\DependencyInjection\Extension;
  *
  * To learn more see {@link http://symfony.com/doc/current/cookbook/bundles/extension.html}
  */
-class CSBillNotificationExtension extends Extension
+class NamshiNotificatorExtension extends Extension
 {
     /**
      * {@inheritDoc}
