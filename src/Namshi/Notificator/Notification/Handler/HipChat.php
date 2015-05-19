@@ -35,7 +35,7 @@ class HipChat implements HandlerInterface
      */
     public function handle(NotificationInterface $notification)
     {        
-        $notify = $notification->getParameter('hipchat_notify') ?: true;
+        $notify = $notification->getParameter('hipchat_notify');
         $color  = $notification->getParameter('hipchat_color') ?: HipChatClient::COLOR_YELLOW;
         $format = $notification->getParameter('hipchat_message_format') ?: HipChatClient::FORMAT_TEXT;
                     
@@ -43,7 +43,7 @@ class HipChat implements HandlerInterface
             $notification->getHipChatRoom(),
             $notification->getHipChatSenderId(),
             $notification->getMessage(),
-            $notify,
+            isset($notify) ? $notify : true ,
             $color,
             $format
         );
