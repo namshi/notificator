@@ -252,17 +252,26 @@ handlers.
 [Namshi](http://en-ae.namshi.com) is currently using this library inside
 their Symfony2 applications.
 
-This is an example configuration that can be declared for the container:
+Add the bundle to your AppKernel.php:
 
 ```
-namshi.notification.manager:
-    class: Namshi\Notificator\Manager
-    calls:
-      - [addhandler, [@namshi.notification.handler.email] ]
+     $bundles = array(
+         ...
+         new Namshi\Notificator\Symfony\NamshiNotificatorBundle()
+     );
+```
+
+To register a new handler, create a service with the `notification.handler` tag:
+
+```
 namshi.notification.handler.email:
     class: Namshi\Notificator\Notification\Handler\Emailvision
     arguments:
-      client: @namshi.email_client.emailvision      
+      client: @namshi.email_client.emailvision
+            
+    tags:
+        - { name: notification.handler }
+
 namshi.email_client.emailvision:
     class: Namshi\Emailvision\Client
     arguments:
@@ -274,7 +283,7 @@ namshi.email_client.emailvision:
           stype:    NOTHING
 ```
 
-This configuration makes available a Manager with the Emailvision handler.
+This configuration registers an Emailvision handler.
 
 ## RabbitMQ
 
