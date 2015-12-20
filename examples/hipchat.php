@@ -15,7 +15,7 @@ $manager = new Manager(array(new HipChatHandler(new HipChat(
 
 // lets have some fun
 $messages = array(
-    'Yo @all',
+    'Yo @here',
     'I am coming',
     'to announce',
     'that this notifications',
