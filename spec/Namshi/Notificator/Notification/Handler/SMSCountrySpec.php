@@ -8,10 +8,7 @@ use Namshi\SMSCountry\Client;
 
 class SMSCountrySpec extends ObjectBehavior
 {
-    /**
-     * @param \Namshi\SMSCountry\Client $client
-     */
-    function let($client)
+    function let(Client $client)
     {
         $this->beConstructedWith($client);
     }
@@ -30,11 +27,7 @@ class SMSCountrySpec extends ObjectBehavior
         }
     }
 
-    /**
-     * @param  \Namshi\Notificator\Notification\Sms\SmsNotification $notification
-     * @param  \Namshi\SMSCountry\Client $client
-     */
-    function it_handles_sms_notification($notification, $client)
+    function it_handles_sms_notification(SmsNotification $notification,Client $client)
     {
         $notification->getRecipientNumber()->willReturn('Number')->shouldBeCalled();
         $notification->getMessage()->willReturn('body')->shouldBeCalled();

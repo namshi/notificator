@@ -2,9 +2,9 @@
 
 namespace spec\Namshi\Notificator\Notification\HipChat;
 
-use Cordoval\PhpSpec\ObjectBehaviorComplete;
+use PhpSpec\ObjectBehavior;
 
-class HipChatNotificationSpec extends ObjectBehaviorComplete
+class HipChatNotificationSpec extends ObjectBehavior
 {
     function let()
     {

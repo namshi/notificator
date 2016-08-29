@@ -2,9 +2,9 @@
 
 namespace spec\Namshi\Notificator\Notification\NotifySend;
 
-use Cordoval\PhpSpec\ObjectBehaviorComplete;
+use PhpSpec\ObjectBehavior;
 
-class NotifySendNotificationSpec extends ObjectBehaviorComplete
+class NotifySendNotificationSpec extends ObjectBehavior
 {
     function let()
     {

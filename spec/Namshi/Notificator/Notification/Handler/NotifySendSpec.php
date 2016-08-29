@@ -6,13 +6,11 @@ use Namshi\Notificator\Notification\Email\EmailNotification;
 use Namshi\Notificator\Notification\Handler\NotifySend;
 use Namshi\Notificator\Notification\NotifySend\NotifySendNotification;
 use PhpSpec\ObjectBehavior;
+use Symfony\Component\Process\ExecutableFinder;
 
 class NotifySendSpec extends ObjectBehavior
 {
-    /**
-     * @param \Symfony\Component\Process\ExecutableFinder $finder
-     */
-    function let($finder)
+    function let(ExecutableFinder $finder)
     {
         $this->beConstructedWith($finder);
     }
@@ -23,10 +21,7 @@ class NotifySendSpec extends ObjectBehavior
         $this->shouldImplement('Namshi\Notificator\Notification\Handler\HandlerInterface');
     }
 
-    /**
-     * @param \Symfony\Component\Process\ExecutableFinder $finder
-     */
-    function it_should_handle_notifysend_notifications_only($finder)
+    function it_should_handle_notifysend_notifications_only(ExecutableFinder $finder)
     {
         $notification = new NotifySendNotification('message', []);
         $otherNotification = new EmailNotification(['recipient'], []);

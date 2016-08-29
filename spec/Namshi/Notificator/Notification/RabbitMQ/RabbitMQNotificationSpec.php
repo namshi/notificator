@@ -2,9 +2,9 @@
 
 namespace spec\Namshi\Notificator\Notification\RabbitMQ;
 
-use Cordoval\PhpSpec\ObjectBehaviorComplete;
+use PhpSpec\ObjectBehavior;
 
-class RabbitMQNotificationSpec extends ObjectBehaviorComplete
+class RabbitMQNotificationSpec extends ObjectBehavior
 {
     function let()
     {

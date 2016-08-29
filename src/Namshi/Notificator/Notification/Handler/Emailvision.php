@@ -16,7 +16,7 @@ class Emailvision extends Email
     /**
      * Constructor
      *
-     * @param \Namshi\Notificator\Notification\Email\Emailvision\ClientInterface $emailClient
+     * @param ClientInterface $emailClient
      */
     public function __construct(ClientInterface $emailClient)
     {

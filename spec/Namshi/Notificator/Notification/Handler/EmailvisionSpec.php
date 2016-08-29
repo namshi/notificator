@@ -3,15 +3,13 @@
 namespace spec\Namshi\Notificator\Notification\Handler;
 
 use Namshi\Notificator\Notification\Email\EmailNotification;
+use Namshi\Notificator\Notification\Email\Emailvision\ClientInterface;
 use Namshi\Notificator\Notification\Email\Emailvision\EmailvisionNotification;
 use PhpSpec\ObjectBehavior;
 
 class EmailvisionSpec extends ObjectBehavior
 {
-    /**
-     * @param \Namshi\Notificator\Notification\Email\Emailvision\ClientInterface $client
-     */
-    function let($client)
+    function let(ClientInterface $client)
     {
         $this->beConstructedWith($client);
     }
@@ -34,11 +32,7 @@ class EmailvisionSpec extends ObjectBehavior
         }
     }
 
-    /**
-     * @param \Namshi\Notificator\Notification\Email\Emailvision\EmailvisionNotification $notification
-     * @param \Namshi\Notificator\Notification\Email\Emailvision\ClientInterface $client
-     */
-    function it_handles_emailvision_notification($notification, $client)
+    function it_handles_emailvision_notification(EmailvisionNotification $notification, ClientInterface $client)
     {
         $notification->getEmailTemplate()->willReturn('template')->shouldBeCalled();
         $notification->getRecipientAddresses()->willReturn(['recipient'])->shouldBeCalled();

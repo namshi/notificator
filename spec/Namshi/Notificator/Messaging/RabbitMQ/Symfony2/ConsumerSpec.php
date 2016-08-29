@@ -2,16 +2,15 @@
 
 namespace spec\Namshi\Notificator\Messaging\RabbitMQ\Symfony2;
 
+use Namshi\Notificator\ManagerInterface;
 use Namshi\Notificator\Notification;
 use PhpAmqpLib\Message\AMQPMessage;
 use PhpSpec\ObjectBehavior;
 
 class ConsumerSpec extends ObjectBehavior
 {
-    /**
-     * @param \Namshi\Notificator\ManagerInterface $manager
-     */
-    function let($manager)
+
+    function let(ManagerInterface $manager)
     {
         $this->beConstructedWith($manager);
     }
@@ -21,10 +20,7 @@ class ConsumerSpec extends ObjectBehavior
         $this->shouldHaveType('Namshi\Notificator\Messaging\RabbitMQ\Symfony2\Consumer');
     }
 
-    /**
-     * @param \Namshi\Notificator\ManagerInterface $manager
-     */
-    function it_process_message_implementing_message_interface($manager)
+    function it_process_message_implementing_message_interface(ManagerInterface $manager)
     {
         $notification = new Notification('hello');
         $amqpMessage = new AMQPMessage(serialize($notification));

@@ -1,15 +1,18 @@
 {
     "name": "namshi/notificator",
     "description": "A lightweight library to handle notifications the smart way.",
+    "require": {
+        "php": ">=5.5"
+    },
     "require-dev": {
-        "phpspec/phpspec": "dev-master",
+        "phpspec/phpspec": "2.5.1",
         "oldsound/rabbitmq-bundle": "1.1.3",
-        "symfony/process": "v2.2.3",
+        "symfony/process": "v2.7.0",
         "hipchat/hipchat-php": "1.2.*",
-        "cordoval/phpspec-stubs": "dev-master",
         "namshi/smscountry": "~1.0",
         "psr/log": "~1.0",
-        "swiftmailer/swiftmailer": "~5.0.0"
+        "swiftmailer/swiftmailer": "~5.0.0",
+        "guzzlehttp/guzzle": "^6.2"
     },
     "suggest": {
         "oldsound/rabbitmq-bundle": "To send RabbitMQ notifications in Symfony2",

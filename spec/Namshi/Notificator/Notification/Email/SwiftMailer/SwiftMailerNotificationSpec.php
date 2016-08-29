@@ -2,9 +2,9 @@
 
 namespace spec\Namshi\Notificator\Notification\Email\SwiftMailer;
 
-use Cordoval\PhpSpec\ObjectBehaviorComplete;
+use PhpSpec\ObjectBehavior;
 
-class SwiftMailerNotificationSpec extends ObjectBehaviorComplete
+class SwiftMailerNotificationSpec extends ObjectBehavior
 {
     function let()
     {
