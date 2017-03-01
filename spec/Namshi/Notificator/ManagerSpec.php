@@ -13,9 +13,9 @@ class ManagerSpec extends ObjectBehavior
         $this->shouldImplement('Namshi\Notificator\ManagerInterface');
     }
 
-    function it_comes_with_no_handlers_by_default()
+    function it_comes_with_one_handler_by_default()
     {
-        $this->getHandlers()->shouldHaveCount(0);
+        $this->getHandlers()->shouldHaveCount(1);
     }
 
     /**
@@ -25,7 +25,7 @@ class ManagerSpec extends ObjectBehavior
     {
         $this->addHandler($handler);
         $this->addHandler($handler);
-        $this->getHandlers()->shouldHaveCount(2);
+        $this->getHandlers()->shouldHaveCount(3);
     }
 
     /**
@@ -35,7 +35,7 @@ class ManagerSpec extends ObjectBehavior
     function it_can_stop_propagation_of_notifications($handler, $notification)
     {
         foreach (range(1,6) as $i) { $this->addHandler($handler); };
-        $this->getHandlers()->shouldHaveCount(6);
+        $this->getHandlers()->shouldHaveCount(7);
 
         $handler->shouldHandle(Argument::any())->shouldBeCalled()->willReturn(true);
         $handler->handle(Argument::any())->shouldBeCalledTimes(1)->willReturn(false);
