@@ -40,8 +40,7 @@ class Manager implements ManagerInterface
         foreach ($this->getHandlers() as $handler) {
             if ($handler->shouldHandle($notification)) {
                 if ($logger = $this->getLogger()) {
-                    $message = sprintf('notification handler "%s" processed message', get_class($handler));
-                    $logger->info($message, array('Notification' => serialize($notification)));
+                    $logger->info(sprintf('notification handler "%s" processed message', get_class($handler)));
                 }
 
                 if (false === $handler->handle($notification)) {
