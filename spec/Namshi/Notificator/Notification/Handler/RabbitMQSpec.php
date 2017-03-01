@@ -10,10 +10,7 @@ use Prophecy\Argument;
 
 class RabbitMQSpec extends ObjectBehavior
 {
-    /**
-     * @param \PhpAmqpLib\Channel\AMQPChannel $publisher
-     */
-    function let($publisher)
+    function let(AMQPChannel $publisher)
     {
         $this->beConstructedWith($publisher);
     }
@@ -38,11 +35,7 @@ class RabbitMQSpec extends ObjectBehavior
         }
     }
 
-    /**
-     * @param \PhpAmqpLib\Channel\AMQPChannel $publisher
-     * @param \Namshi\Notificator\Notification\RabbitMQ\RabbitMQNotification $notification
-     */
-    function it_handles_rabbitmq_notification($publisher, $notification)
+    function it_handles_rabbitmq_notification(AMQPChannel $publisher, RabbitMQNotification $notification)
     {
         $publisher->basic_publish(Argument::any())->willReturn(Argument::any())->shouldBeCalled();
         $notification->getMessage()->willReturn('message')->shouldBeCalled();

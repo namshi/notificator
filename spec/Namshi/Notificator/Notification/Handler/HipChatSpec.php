@@ -2,6 +2,7 @@
 
 namespace spec\Namshi\Notificator\Notification\Handler;
 
+use HipChat\HipChat;
 use Namshi\Notificator\Notification\Email\EmailNotification;
 use Namshi\Notificator\Notification\HipChat\HipChatNotification;
 use PhpSpec\ObjectBehavior;
@@ -9,10 +10,7 @@ use Prophecy\Argument;
 
 class HipChatSpec extends ObjectBehavior
 {
-    /**
-     * @param \HipChat\HipChat $hipChatClient
-     */
-    function let($hipChatClient)
+    function let(HipChat $hipChatClient)
     {
         $this->beConstructedWith($hipChatClient);
     }
@@ -36,11 +34,7 @@ class HipChatSpec extends ObjectBehavior
         }
     }
 
-    /**
-     * @param \Namshi\Notificator\Notification\HipChat\HipChatNotification $hipChatNotification
-     * @param \HipChat\HipChat $hipChatClient
-     */
-    function it_handles_hipchat_notifications($hipChatNotification, $hipChatClient)
+    function it_handles_hipchat_notifications(HipChatNotification $hipChatNotification, Hipchat $hipChatClient)
     {
         $hipChatNotification->getParameter(Argument::any())->willReturn('something');
         $hipChatNotification->getHipChatRoom()->willReturn('something');

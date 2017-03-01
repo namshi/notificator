@@ -10,10 +10,7 @@ use Prophecy\Argument;
 
 class SwiftMailerSpec extends ObjectBehavior
 {
-    /**
-     * @param \Swift_Mailer $mailer
-     */
-    function let($mailer)
+    function let(\Swift_Mailer $mailer)
     {
         $this->beConstructedWith($mailer);
     }
@@ -36,12 +33,7 @@ class SwiftMailerSpec extends ObjectBehavior
         }
     }
 
-    /**
-     * @param \Namshi\Notificator\Notification\Email\SwiftMailer\SwiftMailerNotification $notification
-     * @param \Swift_Message $message
-     * @param \Swift_Mailer $mailer
-     */
-    function it_handles_emailvision_notification($notification, $message, $mailer)
+    function it_handles_emailvision_notification(SwiftMailerNotification $notification, \Swift_Message $message, \Swift_Mailer $mailer)
     {
         $notification->getMessage()->willReturn($message)->shouldBeCalled();
         $this->handle($notification)->shouldBe(true);

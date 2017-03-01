@@ -2,6 +2,8 @@
 
 namespace spec\Namshi\Notificator;
 
+use Namshi\Notificator\Notification\Handler\HandlerInterface;
+use Namshi\Notificator\NotificationInterface;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 
@@ -18,21 +20,14 @@ class ManagerSpec extends ObjectBehavior
         $this->getHandlers()->shouldHaveCount(0);
     }
 
-    /**
-     * @param Namshi\Notificator\Notification\Handler\HandlerInterface $handler
-     */
-    function it_can_hold_several_handlers($handler)
+    function it_can_hold_several_handlers(HandlerInterface $handler)
     {
         $this->addHandler($handler);
         $this->addHandler($handler);
         $this->getHandlers()->shouldHaveCount(2);
     }
 
-    /**
-     * @param \Namshi\Notificator\Notification\Handler\HandlerInterface $handler
-     * @param \Namshi\Notificator\NotificationInterface $notification
-     */
-    function it_can_stop_propagation_of_notifications($handler, $notification)
+    function it_can_stop_propagation_of_notifications(HandlerInterface $handler, NotificationInterface $notification)
     {
         foreach (range(1,6) as $i) { $this->addHandler($handler); };
         $this->getHandlers()->shouldHaveCount(6);

@@ -2,9 +2,9 @@
 
 namespace spec\Namshi\Notificator\Notification\Email;
 
-use Cordoval\PhpSpec\ObjectBehaviorComplete;
+use PhpSpec\ObjectBehavior;
 
-class EmailNotificationSpec extends ObjectBehaviorComplete
+class EmailNotificationSpec extends ObjectBehavior
 {
     function let()
     {
