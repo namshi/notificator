@@ -71,11 +71,9 @@ class NotifySend implements HandlerInterface
                 $command .= $key;
                 $command .= "=";
                 $command .= $value;
-                $command .= "";
             }
         }
-        $command .= " " . $notification->getMessage();
-        return sprintf(self::NOTIFY_SEND_COMMAND.' %s', $command);
+        return sprintf(self::NOTIFY_SEND_COMMAND.' %s "%s"', $command, $notification->getMessage());
     }
 
     /**
