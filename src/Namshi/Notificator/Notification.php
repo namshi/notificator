@@ -42,7 +42,6 @@ class Notification implements NotificationInterface
 
     /**
      * Returns a parameter.
-     * 
      * @param string $id
      * @return mixed
      */
@@ -52,7 +51,18 @@ class Notification implements NotificationInterface
             return $this->parameters[$id];
         }
     }
-    
+
+    /**
+     * Sets a parameter.
+     *
+     * @param string $id
+     * @param string $value
+     */
+    public function setParameter($id, $value)
+    {
+        $this->parameters[$id] = $value;
+    }
+
     /**
      * @inheritDoc
      */
